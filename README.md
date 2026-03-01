@@ -1,4 +1,4 @@
-# 🔍 LedgerLens: AI-Powered Financial Investigation System
+# LedgerLens: AI-Powered Financial Investigation System
 
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-009688.svg?logo=fastapi)](https://fastapi.tiangolo.com)
@@ -11,18 +11,18 @@
 
 ---
 
-## ✨ Core Features
+## Core Features
 
-- **🛡️ Zero Hallucination Policy:** The LLM acts purely as an orchestrator and synthesizer. All financial data is pulled strictly from deterministic tools and SQL queries. If evidence is insufficient, the system safely aborts.
-- **🧠 Multi-Step Agentic RAG:** Powered by LangGraph, the agent flow dynamically resolves intent, selects tools, gathers evidence, synthesizes findings, and applies confidence guardrails.
-- **⚡ High-Performance Architecture:** utilizing FastAPI for async endpoints, Groq (`llama-3.3-70b-versatile`) for blazing-fast inference, and Redis for aggressive caching of vector embeddings and exact-match queries.
-- **📊 Hybrid Vector Search:** Integrates `pgvector` alongside PostgreSQL Full-Text Search (merged via Reciprocal Rank Fusion) to semantically find historically similar resolved tickets.
-- **👮 Role-Based Access Control (RBAC):** Strict JWT-based authorization ensures users only execute tools they have explicit permission for.
-- **🔬 Built-In Evaluation Pipeline:** Native support for evaluating agent accuracy with metrics like `Recall@K`, `Grounding Score`, and `Tool Accuracy` against golden datasets.
+- **Zero Hallucination Policy:** The LLM acts purely as an orchestrator and synthesizer. All financial data is pulled strictly from deterministic tools and SQL queries. If evidence is insufficient, the system safely aborts.
+- **Multi-Step Agentic RAG:** Powered by LangGraph, the agent flow dynamically resolves intent, selects tools, gathers evidence, synthesizes findings, and applies confidence guardrails.
+- **High-Performance Architecture:** utilizing FastAPI for async endpoints, Groq (`llama-3.3-70b-versatile`) for blazing-fast inference, and Redis for aggressive caching of vector embeddings and exact-match queries.
+- **Hybrid Vector Search:** Integrates `pgvector` alongside PostgreSQL Full-Text Search (merged via Reciprocal Rank Fusion) to semantically find historically similar resolved tickets.
+- **Role-Based Access Control (RBAC):** Strict JWT-based authorization ensures users only execute tools they have explicit permission for.
+- **Built-In Evaluation Pipeline:** Native support for evaluating agent accuracy with metrics like `Recall@K`, `Grounding Score`, and `Tool Accuracy` against golden datasets.
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```mermaid
 graph TD
@@ -47,7 +47,7 @@ graph TD
 
 ---
 
-## 🚀 Quick Start (Docker)
+## Quick Start (Docker)
 
 The easiest way to run LedgerLens is using the provided Docker Compose setup, which automatically provisions the API, PostgreSQL (with `pgvector`), and Redis.
 
@@ -79,7 +79,7 @@ docker exec -it ledgerlens-api-1 python scripts/seed_db.py
 
 ---
 
-## 💻 Local Development Setup
+## Local Development Setup
 
 If you prefer running the Python server locally outside of Docker:
 
@@ -106,7 +106,7 @@ If you prefer running the Python server locally outside of Docker:
 
 ---
 
-## 📖 API Usage
+## API Usage
 
 ### Health Checks
 ```bash
@@ -143,7 +143,7 @@ curl -X POST http://localhost:8000/investigate/ \
 
 ---
 
-## 🛠️ Tooling Layer
+## Tooling Layer
 
 The agent has strict access to the following deterministic tools based on user roles:
 1. `get_transaction`: SQL lookup for basic transaction metadata.
@@ -154,7 +154,7 @@ The agent has strict access to the following deterministic tools based on user r
 
 ---
 
-## 🧪 Testing and Evaluation
+## Testing and Evaluation
 
 Run the unit tests and the evaluation metric assertions using `pytest`:
 
@@ -169,6 +169,6 @@ The evaluation framework (`app/eval/metrics.py`) provides quantitative analysis 
 
 ---
 
-## 🛡️ License
+## License
 
 This project is licensed under the MIT License.
